@@ -1,0 +1,16 @@
+package com.nowcoder.list;
+/**
+ * 从尾到头打印链表
+ * 输入一个链表，按链表值从尾到头的顺序返回一个ArrayList
+ */
+import java.util.ArrayList;
+public class Solution {
+	ArrayList<Integer> arrayList = new ArrayList<Integer>();
+    public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+    	if (listNode != null) {
+    		this.printListFromTailToHead(listNode.next);
+    		arrayList.add(listNode.val);
+    	}
+		return arrayList;
+    }
+}
